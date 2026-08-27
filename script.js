@@ -1,44 +1,37 @@
-// Laptop Repair Service - Form Functionality
+// FixPro Laptop Repair Website
 
-const form = document.getElementById("repairForm");
+document.addEventListener("DOMContentLoaded", function () {
 
-form.addEventListener("submit", function (event) {
-event.preventDefault();
+    const form = document.getElementById("repairForm");
 
-const nameInput = form.querySelector('input[type="text"]');
-const phoneInput = form.querySelector('input[type="tel"]');
-const laptopInput = form.querySelectorAll('input[type="text"]')[1];
-const problemInput = form.querySelector("textarea");
-
-const name = nameInput.value.trim();
-const phone = phoneInput.value.trim();
-const laptop = laptopInput.value.trim();
-const problem = problemInput.value.trim();
-
-if (name === "" || phone === "" || laptop === "" || problem === "") {
-    alert("Please fill in all the fields.");
-    return;
-}
-
-alert(
-    "Thank you, " + name +
-    "! Your repair request has been submitted successfully."
-);
-
-form.reset();
-
-});
-
-// Smooth navigation
-document.querySelectorAll(".nav-links a").forEach(function (link) {
-link.addEventListener("click", function () {
-const target = document.querySelector(this.getAttribute("href"));
-
-    if (target) {
-        target.scrollIntoView({
-            behavior: "smooth"
-        });
+    if (!form) {
+        console.log("Repair form not found.");
+        return;
     }
-});
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const inputs = form.querySelectorAll("input");
+        const textarea = form.querySelector("textarea");
+
+        const name = inputs[0]?.value.trim();
+        const phone = inputs[1]?.value.trim();
+        const laptop = inputs[2]?.value.trim();
+        const problem = textarea?.value.trim();
+
+        if (!name || !phone || !laptop || !problem) {
+            alert("Please fill in all the fields.");
+            return;
+        }
+
+        alert(
+            "Thank you, " + name +
+            "!\n\nYour repair request has been submitted successfully."
+        );
+
+        form.reset();
+    });
 
 });
