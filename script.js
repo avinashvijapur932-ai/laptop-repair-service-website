@@ -2,14 +2,14 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.getElementById("repairForm");
+    const form = document.getElementById("Rapair Deatials ");
 
     if (!form) {
         console.log("Repair form not found.");
         return;
     }
 
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("Summit Report", function (event) {
 
         event.preventDefault();
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         alert(
-            "Thank you, " + name +
+            "Thanking you, " + name +
             "!\n\nYour repair request has been submitted successfully."
         );
 
