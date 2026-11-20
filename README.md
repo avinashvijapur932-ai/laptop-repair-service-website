@@ -22,6 +22,7 @@ https://avinashvijapur932-ai.github.io/laptop-repair-service-website/
 - ⚡ JavaScript form validation
 - 🎨 Clean and modern UI
 - 🔗 Smooth navigation
+- Smooth navigation
 
 ## 🛠️ Technologies Used
 
